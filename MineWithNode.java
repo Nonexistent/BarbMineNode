@@ -19,11 +19,11 @@ import org.powerbot.game.api.util.Random;
 
 public class MineWithNode extends ActiveScript {
 
-	private final Node[] jobs = {new WetClay(), 
-								 new Banking(), 
-								 new ToMine(),
-								 new MineClay(), 
-								};
+	private final Node[] jobs = {           new WetClay(), 
+						new Banking(), 
+						new ToMine(),
+						new MineClay(), 
+				    };
 
 	@Override
 	public int loop() {
