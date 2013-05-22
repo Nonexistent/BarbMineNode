@@ -29,8 +29,8 @@ public class Banking extends Node {
 			if (Calculations.distanceTo(VARS.bankTile) < 4) {
 				if (Bank.open()) {
 					sleep(800);
-					int check = 
-	  Inventory.getItemAt(0).getName().contains("pickaxe") ? 1 : 2;
+					
+					int check = Inventory.getItemAt(0).getName().contains("pickaxe") ? 1 : 2;
 
 					switch (check) {
 					case 1:
