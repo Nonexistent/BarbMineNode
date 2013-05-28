@@ -43,6 +43,7 @@ public class WetClay extends Node {
 			}
 		} else {
 			Walking.walk(VARS.wellTile);
+			sleep(1000, 1200);
 		}
 	}
 }

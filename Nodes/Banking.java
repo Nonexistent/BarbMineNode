@@ -17,10 +17,9 @@ public class Banking extends Node {
 
 	@Override
 	public boolean activate() {
-		if (Inventory.isFull()) {
-			return Inventory.contains(VARS.softClay);
-		}
-		return false;
+		return Inventory.isFull()
+		    && Inventory.contains(VARS.softClay)
+		    && !VARS.wellArea.contains(Players.getLocal());
 	}
 
 	@Override
@@ -29,8 +28,10 @@ public class Banking extends Node {
 			if (Calculations.distanceTo(VARS.bankTile) < 4) {
 				if (Bank.open()) {
 					sleep(800);
-					int check = 
-	  Inventory.getItemAt(0).getName().contains("pickaxe") ? 1 : 2;
+					
+					int check = Inventory.getItemAt(0).getName().contains("pickaxe") 
+							    ? 1 
+							    : 2;
 
 					switch (check) {
 					case 1:
@@ -81,10 +82,9 @@ public class Banking extends Node {
 		} else {
 			while (!VARS.bankArea.contains(Players.getLocal())) {
 				Walking.walk(VARS.bankTile);
-				sleep(Random.nextInt(1000, 1200));
+				sleep(Random.nextInt(800, 1000));
 				System.out.println("Gon bank yo shizz");
 			}
 		}
 	}
-
 }

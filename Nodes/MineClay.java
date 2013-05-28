@@ -1,7 +1,6 @@
 package mineUsingNode.Nodes;
 
 import org.powerbot.core.script.job.state.Node;
-import org.powerbot.game.api.methods.Walking;
 import org.powerbot.game.api.methods.interactive.Players;
 import org.powerbot.game.api.methods.node.SceneEntities;
 import org.powerbot.game.api.methods.tab.Inventory;
@@ -14,7 +13,7 @@ public class MineClay extends Node {
 	@Override
 	public boolean activate() {
 		return VARS.mineArea.contains(Players.getLocal())
-				&& !Inventory.isFull();
+		   && !Inventory.isFull();
 	}
 
 	@Override
@@ -25,13 +24,11 @@ public class MineClay extends Node {
 				&& !Inventory.isFull()) {
 			SceneObject rock = SceneEntities.getNearest(VARS.rocks);
 			if (rock != null) {
-				if (rock.isOnScreen()) {
-					if (Players.getLocal().isIdle()) {
-						if (Players.getLocal().getAnimation() != 625) {
-							rock.interact("Mine");
-							System.out.println("mining clay");
-							sleep(900, 1100);
-						}
+				if (rock.isOnScreen() && Players.getLocal().isIdle()) {
+					rock.interact("Mine");
+					sleep(1100, 1300);
+					if (Players.getLocal().getAnimation() == 625) {
+						sleep(800);
 					}
 				}
 			}
