@@ -6,7 +6,7 @@ import org.powerbot.game.api.wrappers.Tile;
 
 
 public class Vars {
-	// Some IDs
+	// Some variables
 		/* int u = Random.nextInt(0, 3); */
 		public static final int[] ROCKS = { 10577, 10578 };
 		public static final int CLAY = 434;
