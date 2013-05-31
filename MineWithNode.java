@@ -20,9 +20,9 @@ import org.powerbot.game.api.util.Random;
 import org.powerbot.game.api.wrappers.node.Item;
 
 @Manifest(authors = { "Nonexistent" }, 
-		  description = "Rewrite of first script using node system.", 
-		  name = "Barb Miner Using Nodes"
-		 )
+	  description = "Rewrite of first script using node system.", 
+	  name = "Barb Miner Using Nodes"
+	   	)
 
 public class MineWithNode extends ActiveScript implements PaintListener,
 		MessageListener {
