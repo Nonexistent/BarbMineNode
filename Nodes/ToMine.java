@@ -17,8 +17,7 @@ public class ToMine extends Node {
 	@Override
 	public void execute() {
 		while (!Vars.MINE_AREA.contains(Players.getLocal())) {
-			if (Vars.BANK_AREA.contains(Players.getLocal())
-					&& !Inventory.isFull()) {
+			if (Vars.BANK_AREA.contains(Players.getLocal()) && !Inventory.isFull()) {
 				/*Moving to a suitable location for
 				 * Walking.walk(VARS.mineTile) to click the furtherest tile on minimap
 				 * or else it will get stuck running back and forth between the wall
