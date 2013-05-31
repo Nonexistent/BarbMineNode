@@ -14,8 +14,7 @@ public class MineClay extends Node {
 
 	@Override
 	public boolean activate() {
-		return Vars.MINE_AREA.contains(Players.getLocal())
-				&& !Inventory.isFull();
+		return Vars.MINE_AREA.contains(Players.getLocal()) && !Inventory.isFull();
 	}
 
 	@Override
